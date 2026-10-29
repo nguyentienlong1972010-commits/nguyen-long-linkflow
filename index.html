@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b14">
+  <title>Nguyễn Long — LinkFlow</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-icon" aria-hidden="true">↗</div>
+      <div class="brand-copy"><h1>Nguyễn Long</h1><p>app.ngynlng.by · LINK PROCESSOR</p></div>
+      <span class="status-pill"><i></i> SẴN SÀNG</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="spark">✦</span> CÔNG CỤ PHÂN TÍCH LIÊN KẾT</div>
+      <h2>Điều hướng link,<br><span class="gradient-text">rõ ràng hơn.</span></h2>
+      <p class="intro">Kiểm tra chuỗi chuyển hướng HTTP, xem trạng thái từng bước và xác định URL cuối cùng có thể truy cập.</p>
+
+      <form id="analyze-form" class="panel rainbow-panel">
+        <label for="url-input">Liên kết cần phân tích</label>
+        <div class="input-wrap">
+          <input id="url-input" name="url" type="url" inputmode="url" placeholder="https://example.com/link..." autocomplete="url" required>
+          <span class="input-glow" aria-hidden="true"></span>
+        </div>
+        <button id="submit-btn" type="submit"><span class="button-icon">✦</span><span id="button-label">Phân tích liên kết</span><span class="button-arrow">→</span></button>
+        <p class="microcopy"><span>🔒</span> Chỉ kiểm tra chuyển hướng HTTP công khai; không vượt CAPTCHA hoặc điều kiện quảng cáo.</p>
+      </form>
+    </section>
+
+    <section id="results" class="results panel hidden" aria-live="polite">
+      <div class="results-heading"><div><p class="eyebrow">KẾT QUẢ PHÂN TÍCH</p><h3 id="result-title">Tiến trình xử lý</h3></div><span id="step-count" class="count-pill">0 bước</span></div>
+      <div id="loading" class="loading hidden"><span class="spinner"></span> Đang kiểm tra chuyển hướng…</div>
+      <ol id="steps" class="steps"></ol>
+      <div id="final-box" class="final-box hidden"><span class="final-label">URL cuối cùng được kiểm tra</span><a id="final-url" href="#" target="_blank" rel="noopener noreferrer"></a><button id="copy-btn" type="button" class="copy-btn">Sao chép</button></div>
+      <p id="result-note" class="result-note"></p>
+    </section>
+
+    <footer><span>NGUYỄN LONG</span><span>Được thiết kế cho màn hình di động <b>•</b> RGB UI</span></footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
