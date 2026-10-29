@@ -42,7 +42,8 @@ def validate_public_url(url):
 
 @app.get("/")
 def index():
-    return render_template("index.html")
+    from flask import send_from_directory
+    return send_from_directory(".", "index.html")
 
 @app.post("/api/analyze")
 def analyze():
